@@ -45,5 +45,39 @@ ul{
     overflow-x: scroll;
     display: flex;
     margin-bottom: 27px;
-    padding: 0 19px;
+    padding-left: 19px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+li{
+    width: 172px;
+    height: 220px;
+    background-color: white;
+    border-radius: 9px;
+    padding: 18px 14px 13px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 16px;
+}
+
+li img{
+    width: 144px;
+    border-radius: 4px;
+}
+
+.nome-item{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.descricao-item{
+    font-size: 15px;
+    font-weight: 300;
+    color: #A6A6A6;
+}
+
+.preco-item{
+    font-size: 14px;
 }
