@@ -1,7 +1,4 @@
-function selecionaItem(){
-    let item = document.getElementById("item");
-    item.style.border = "5px solid #32b72f";
+function selecionaItem(item){
+   item.classList.toggle("selecionado");
 
-    let check = document.getElementById("check");
-    check.style.display = "initial";
 }

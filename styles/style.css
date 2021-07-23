@@ -108,13 +108,13 @@ footer{
     border: none;
 }
 
-/* .verde{
+ .selecionado{
     border: 5px solid #32b72f;
     position: relative;
 }
-*/
 
-#check{
+
+ion-icon{
     color: #32b72f;
     position: absolute;
     font-size: 20px;
