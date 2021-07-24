@@ -27,7 +27,7 @@
                 <img src="assets/frango.png" alt="frango">
                 <p class="nome-item">Frango Yin Yang</p>
                 <p class="descricao-item">Um pouco de batata, um pouco de salada</p>
-                <p class="preco-item">R$ 14,90</p>
+                <p class="preco-item-simbolo">R$ <span class="preco-item">14.90</span></p>
                 <!-- <ion-icon name="checkmark-circle"></ion-icon> -->
             </li>
 
@@ -35,21 +35,21 @@
                 <img src="assets/frango.png" alt="frango">
                 <p class="nome-item">Frango Yin Yang</p>
                 <p class="descricao-item">Um pouco de batata, um pouco de salada</p>
-                <p class="preco-item">R$ 14,90</p>
+                <p class="preco-item-simbolo">R$ <span class="preco-item">14.90</span></p>
             </li>
 
             <li onclick="selecionaPrato(this)">
                 <img src="assets/frango.png" alt="frango">
                 <p class="nome-item">Frango Yin Yang</p>
                 <p class="descricao-item">Um pouco de batata, um pouco de salada</p>
-                <p class="preco-item">R$ 14,90</p>
+                <p class="preco-item-simbolo">R$ <span class="preco-item">14.90</span></p>
             </li>
 
             <li onclick="selecionaPrato(this)">
                 <img src="assets/frango.png" alt="frango">
                 <p class="nome-item">Frango Yin Yang</p>
                 <p class="descricao-item">Um pouco de batata, um pouco de salada</p>
-                <p class="preco-item">R$ 14,90</p>
+                <p class="preco-item-simbolo">R$ <span class="preco-item">14.90</span></p>
             </li>
         </ul>
      
@@ -59,28 +59,28 @@
                 <img src="assets/coca.png" alt="coca">
                 <p class="nome-item">Coquinha gelada</p>
                 <p class="descricao-item">Lata 350ml</p>
-                <p class="preco-item">R$ 5,90</p>
+                <p class="preco-item-simbolo">R$ <span class="preco-item">5.90</span></p>
             </li>
 
             <li onclick="selecionaBebida(this)">
                 <img src="assets/coca.png" alt="coca">
                 <p class="nome-item">Coquinha gelada</p>
                 <p class="descricao-item">Lata 350ml</p>
-                <p class="preco-item">R$ 5,90</p>
+                <p class="preco-item-simbolo">R$ <span class="preco-item">5.90</span></p>
             </li>
 
             <li onclick="selecionaBebida(this)">
                 <img src="assets/coca.png" alt="coca">
                 <p class="nome-item">Coquinha gelada</p>
                 <p class="descricao-item">Lata 350ml</p>
-                <p class="preco-item">R$ 5,90</p>
+                <p class="preco-item-simbolo">R$ <span class="preco-item">5.90</span></p>
             </li>
 
             <li onclick="selecionaBebida(this)">
                 <img src="assets/coca.png" alt="coca">
                 <p class="nome-item">Coquinha gelada</p>
                 <p class="descricao-item">Lata 350ml</p>
-                <p class="preco-item">R$ 5,90</p>
+                <p class="preco-item-simbolo">R$ <span class="preco-item">5.90</span></p>
             </li>
         </ul>
      
@@ -90,35 +90,58 @@
                 <img src="assets/pudim.png" alt="pudim">
                 <p class="nome-item">Pudim</p>
                 <p class="descricao-item">Apenas pudim</p>
-                <p class="preco-item">R$ 7,90</p>
+                <p class="preco-item-simbolo">R$ <span class="preco-item">7.90</span></p>
             </li>
 
             <li onclick="selecionaSobremesa(this)">
                 <img src="assets/pudim.png" alt="pudim">
                 <p class="nome-item">Pudim</p>
                 <p class="descricao-item">Apenas pudim</p>
-                <p class="preco-item">R$ 7,90</p>
+                <p class="preco-item-simbolo">R$ <span class="preco-item">7.90</span></p>
             </li>
 
             <li onclick="selecionaSobremesa(this)">
                 <img src="assets/pudim.png" alt="pudim">
                 <p class="nome-item">Pudim</p>
                 <p class="descricao-item">Apenas pudim</p>
-                <p class="preco-item">R$ 7,90</p>
+                <p class="preco-item-simbolo">R$ <span class="preco-item">7.90</span></p>
             </li>
 
             <li onclick="selecionaSobremesa(this)">
                 <img src="assets/pudim.png" alt="pudim">
                 <p class="nome-item">Pudim</p>
                 <p class="descricao-item">Apenas pudim</p>
-                <p class="preco-item">R$ 7,90</p>
+                <p class="preco-item-simbolo">R$ <span class="preco-item">7.90</span></p>
             </li>
         </ul>
-
     </main>
 
+    <div class="confirmar-container escondido">
+        <div class="confirmar">
+            <p>Confirme seu pedido</p>
+            <div class="itens">
+                <p class="nome-prato">Frango Yin Yang</p>
+                <p class="preco-prato">14.90</p>
+            </div>
+            <div class="itens">
+                <p class="nome-bebida">Coquinha gelada</p>
+                <p class="preco-bebida">5.90</p>
+            </div>
+            <div class="itens">
+                <p class="nome-sobremesa">Pudim</p>
+                <p class="preco-sobremesa">7.90</p>
+            </div>
+            <div class="preco-total itens">
+                <p>TOTAL</p>
+                <p>R$ <span>28.70</span></p>
+            </div>
+            <button> Tudo certo, pode pedir!</button>
+            <p>Cancelar</p>
+        </div>
+    </div>
+
     <footer>
-        <button class="botao-finalizar">
+        <button disabled class="botao-finalizar" onclick="confirmarPedido()">
             <p>Selecione os 3 itens
                 para fechar o pedido</p>
         </button>
