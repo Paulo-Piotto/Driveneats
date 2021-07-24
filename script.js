@@ -1,6 +1,10 @@
 let prato;
 let bebida;
 let sobremesa;
+let precoPrato;
+let precoBebida;
+let precoSobremesa;
+let precoTotal;
 
 
 function selecionaPrato(item){
@@ -69,42 +73,73 @@ function liberaPedido(){
 function confirmarPedido(){
    let telaConfirmacao = document.querySelector(".confirmar-container");
 
-   let precoPrato = prato.querySelector(".preco-item").innerHTML;
-   let precoBebida = bebida.querySelector(".preco-item").innerHTML;
-   let precoSobremesa = sobremesa.querySelector(".preco-item").innerHTML;
+   let precoPratoConfirmado = document.querySelector(".preco-prato");
+   let precoBebidaConfirmado = document.querySelector(".preco-bebida");
+   let precoSobremesaConfirmado = document.querySelector(".preco-sobremesa");
+   let precoTotalConfirmado = document.querySelector(".preco-total span");
+   
+   let nomePrato = document.querySelector(".nome-prato");
+   let nomeBebida = document.querySelector(".nome-bebida");
+   let nomeSobremesa = document.querySelector(".nome-sobremesa");
 
-   let precoTotal = Number(precoPrato) + Number(precoBebida) + Number(precoSobremesa);
 
-   telaConfirmacao.classList.remove("escondido");
-}
-
-function geraMensagem(){
-   let botao = document.querySelector(".botao-finalizar");
-
-   let precoPrato = prato.querySelector(".preco-item").innerHTML;
-   let precoBebida = bebida.querySelector(".preco-item").innerHTML;
-   let precoSobremesa = sobremesa.querySelector(".preco-item").innerHTML;
-
-   let precoTotal = Number(precoPrato) + Number(precoBebida) + Number(precoSobremesa);
-
-   precoTotal = precoTotal.toFixed(2);
+   precoPrato = prato.querySelector(".preco-item").innerHTML;
+   precoBebida = bebida.querySelector(".preco-item").innerHTML;
+   precoSobremesa = sobremesa.querySelector(".preco-item").innerHTML;
 
    prato = prato.querySelector(".nome-item").innerHTML;
    bebida = bebida.querySelector(".nome-item").innerHTML;
    sobremesa = sobremesa.querySelector(".nome-item").innerHTML;
 
+   precoPratoConfirmado.innerHTML = precoPrato;
+   precoBebidaConfirmado.innerHTML = precoBebida;
+   precoSobremesaConfirmado.innerHTML = precoSobremesa;
 
-   console.log(prato, bebida, sobremesa);
+   nomePrato.innerHTML = prato;
+   nomeBebida.innerHTML = bebida;
+   nomeSobremesa.innerHTML = sobremesa;
 
-  let mensagem = encodeURIComponent(`Olá, gostaria de fazer o pedido:
+   precoTotal = (Number(precoPrato) + Number(precoBebida) + Number(precoSobremesa)).toFixed(2);
+   precoTotalConfirmado.innerHTML = precoTotal;
+
+   telaConfirmacao.classList.remove("escondido");
+
+   let btn = document.querySelector(".confirmar button");
+
+   let mensagem = geraMensagem();
+
+   btn.innerHTML = `<a href="https://wa.me/5514996047024?text=${mensagem}">
+                           Tudo certo, pode pedir!
+                     </a>`;
+}
+
+function geraMensagem(){
+  let texto = encodeURIComponent(`Olá, gostaria de fazer o pedido:
   - Prato: ${prato}
   - Bebida: ${bebida}
   - Sobremesa: ${sobremesa}
   Total: R$ ${precoTotal}`);
 
+  return texto;
+}
 
-   botao.innerHTML = `<a href="https://wa.me/5514996047024?text=${mensagem}">
-                           <p>Fechar pedido</p>
-                        </a>`;
+function cancelarPedido(){
+   let telaConfirmacao = document.querySelector(".confirmar-container");
+   let botao = document.querySelector(".botao-finalizar");
+   botao.disabled = true;
 
+   telaConfirmacao.classList.add("escondido");
+   botao.classList.remove("botao-liberado");
+
+   prato = document.querySelector(".pratos .selecionado");
+   sobremesa = document.querySelector(".sobremesas .selecionado");
+   bebida = document.querySelector(".bebidas .selecionado");
+
+   prato.classList.remove("selecionado");
+   sobremesa.classList.remove("selecionado");
+   bebida.classList.remove("selecionado");
+
+   prato = undefined;
+   bebida = undefined;
+   sobremesa = undefined;
 }

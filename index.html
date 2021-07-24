@@ -25,9 +25,9 @@
         <ul class="pratos">
             <li  onclick="selecionaPrato(this)">
                 <img src="assets/frango.png" alt="frango">
-                <p class="nome-item">Frango Yin Yang</p>
+                <p class="nome-item">Super Yin Yang</p>
                 <p class="descricao-item">Um pouco de batata, um pouco de salada</p>
-                <p class="preco-item-simbolo">R$ <span class="preco-item">14.90</span></p>
+                <p class="preco-item-simbolo">R$ <span class="preco-item">50.90</span></p>
                 <!-- <ion-icon name="checkmark-circle"></ion-icon> -->
             </li>
 
@@ -120,23 +120,23 @@
         <div class="confirmar">
             <p>Confirme seu pedido</p>
             <div class="itens">
-                <p class="nome-prato">Frango Yin Yang</p>
-                <p class="preco-prato">14.90</p>
+                <p class="nome-prato"></p>
+                <p class="preco-prato"></p>
             </div>
             <div class="itens">
-                <p class="nome-bebida">Coquinha gelada</p>
-                <p class="preco-bebida">5.90</p>
+                <p class="nome-bebida"></p>
+                <p class="preco-bebida"></p>
             </div>
             <div class="itens">
-                <p class="nome-sobremesa">Pudim</p>
-                <p class="preco-sobremesa">7.90</p>
+                <p class="nome-sobremesa"></p>
+                <p class="preco-sobremesa"></p>
             </div>
             <div class="preco-total itens">
                 <p>TOTAL</p>
-                <p>R$ <span>28.70</span></p>
+                <p>R$ <span></span></p>
             </div>
-            <button> Tudo certo, pode pedir!</button>
-            <p>Cancelar</p>
+            <button onclick="geraMensagem()"></button>
+            <p onclick="cancelarPedido()">Cancelar</p>
         </div>
     </div>
 
