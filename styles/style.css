@@ -1,6 +1,6 @@
 *{
     box-sizing: border-box;
-}
+} 
 
 body{
     background-color: #eeeeee;
@@ -114,15 +114,6 @@ footer{
 }
 
 
-ion-icon{
-    color: #32b72f;
-    position: absolute;
-    font-size: 20px;
-    right: 15px;
-    bottom: 12px;
-    display: none;
-} 
-
 .botao-liberado{
     background-color: #32b72f;
     font-size: 16px;
@@ -195,3 +186,4 @@ a{
     justify-content: space-between;
     margin-bottom: 13px;
 }
+
